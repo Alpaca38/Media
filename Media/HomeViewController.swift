@@ -46,6 +46,7 @@ extension HomeViewController: ConfigureProtocol {
         let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonTapped))
         navigationItem.leftBarButtonItem = listButton
         navigationItem.rightBarButtonItem = searchButton
+        navigationItem.backButtonDisplayMode = .minimal
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -80,6 +81,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = list[indexPath.row]
+        let vc = DetailViewController()
+        vc.data = data
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

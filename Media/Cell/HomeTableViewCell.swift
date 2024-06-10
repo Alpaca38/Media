@@ -129,6 +129,7 @@ extension HomeTableViewCell: ConfigureProtocol {
         
         detailButton.setImage(UIImage(systemName: "chevron.forward"), for: .normal)
         detailButton.tintColor = .black
+        detailLabel.isUserInteractionEnabled = false
     }
     
     func configure(data: Result, genreList: [Genre]) {
