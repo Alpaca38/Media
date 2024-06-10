@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Cosmos
+import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -55,6 +56,7 @@ extension HomeTableViewCell: ConfigureProtocol {
         posterView.snp.makeConstraints {
             $0.top.equalTo(categoryLabel.snp.bottom).offset(16)
             $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalTo(posterView.snp.width)
             $0.bottom.equalToSuperview().offset(-20)
         }
         
@@ -64,7 +66,7 @@ extension HomeTableViewCell: ConfigureProtocol {
         
         posterInfoView.snp.makeConstraints {
             $0.bottom.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(posterView).multipliedBy(0.4)
+            $0.height.equalTo(posterView).multipliedBy(0.33)
         }
         
         titleLabel.snp.makeConstraints {
@@ -86,7 +88,6 @@ extension HomeTableViewCell: ConfigureProtocol {
         detailLabel.snp.makeConstraints {
             $0.top.equalTo(separatorView.snp.bottom).offset(16)
             $0.leading.equalTo(separatorView)
-            $0.bottom.equalToSuperview().offset(-10)
         }
         
         detailButton.snp.makeConstraints {
@@ -102,28 +103,23 @@ extension HomeTableViewCell: ConfigureProtocol {
         
         dateLabel.font = .contentFont
         dateLabel.textColor = .contentColor
-        dateLabel.text = "12/10/2020"
         
         categoryLabel.font = .boldTitleFont
         categoryLabel.textColor = .defaultColor
-        categoryLabel.text = "#Mystery"
         
         posterView.clipsToBounds = true
         posterView.layer.cornerRadius = 8
         
-        posterImageView.backgroundColor = .darkGray
+        posterImageView.contentMode = .scaleAspectFill
         
         posterInfoView.backgroundColor = .white
         
         titleLabel.font = .titleFont
         titleLabel.textColor = .defaultColor
-        titleLabel.text = "Alice In BorderLand"
         
         ratingView.settings.fillMode = .precise
         ratingView.settings.totalStars = 10
         ratingView.settings.starSize = 15
-        ratingView.text = "평점 7.7"
-        ratingView.rating = 7.7
         
         separatorView.backgroundColor = .lightGray
         
@@ -133,8 +129,25 @@ extension HomeTableViewCell: ConfigureProtocol {
         
         detailButton.setImage(UIImage(systemName: "chevron.forward"), for: .normal)
         detailButton.tintColor = .black
-        
     }
     
+    func configure(data: Result, genreList: [Genre]) {
+        dateLabel.text = data.releaseDate
+        
+        genreList.forEach {
+            if data.genreIDS.contains($0.id) {
+                categoryLabel.text = $0.genreString
+            }
+        }
+        
+        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterPath)")
+        posterImageView.kf.setImage(with: url)
+        
+        titleLabel.text = data.title
+        
+        ratingView.text = data.ratingString
+        ratingView.rating = data.voteAverage
+        
+    }
     
 }

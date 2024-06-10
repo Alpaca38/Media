@@ -25,6 +25,8 @@
 		D1815FE92C16E0A4004BA146 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = D1815FE82C16E0A4004BA146 /* Cosmos */; };
 		D1815FEB2C16E286004BA146 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FEA2C16E286004BA146 /* Extension+UIFont.swift */; };
 		D1815FED2C16E2FC004BA146 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FEC2C16E2FC004BA146 /* Extension+UIColor.swift */; };
+		D1815FF22C16F11B004BA146 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FF12C16F11B004BA146 /* Movie.swift */; };
+		D1815FF42C16F9EE004BA146 /* MovieGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FF32C16F9EE004BA146 /* MovieGenre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		D1815FEA2C16E286004BA146 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		D1815FEC2C16E2FC004BA146 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		D1815FF12C16F11B004BA146 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D1815FF32C16F9EE004BA146 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		D1815FD02C16D64E004BA146 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D1815FF12C16F11B004BA146 /* Movie.swift */,
+				D1815FF32C16F9EE004BA146 /* MovieGenre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 				D1815FCF2C16D5F2004BA146 /* APIKey.swift in Sources */,
 				D1815FD32C16D693004BA146 /* Extension+UIViewController.swift in Sources */,
 				D1815FE62C16DBB1004BA146 /* HomeTableViewCell.swift in Sources */,
+				D1815FF22C16F11B004BA146 /* Movie.swift in Sources */,
 				D1815FBA2C16D513004BA146 /* SceneDelegate.swift in Sources */,
 				D1815FD82C16D829004BA146 /* ConfigureProtocol.swift in Sources */,
+				D1815FF42C16F9EE004BA146 /* MovieGenre.swift in Sources */,
 				D1815FED2C16E2FC004BA146 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

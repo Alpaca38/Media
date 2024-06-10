@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIFont {
-    static let bigTitleFont = UIFont.boldSystemFont(ofSize: 17)
-    static let titleFont = UIFont.systemFont(ofSize: 15)
-    static let boldTitleFont = UIFont.boldSystemFont(ofSize: 15)
+    static let bigTitleFont = UIFont.boldSystemFont(ofSize: 20)
+    static let titleFont = UIFont.systemFont(ofSize: 17)
+    static let boldTitleFont = UIFont.boldSystemFont(ofSize: 17)
     static let contentFont = UIFont.systemFont(ofSize: 13)
 }

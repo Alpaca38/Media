@@ -7,17 +7,23 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class HomeViewController: BaseViewController {
     
     let tableView = UITableView()
+    var list: [Result] = []
+    var genreList: [Genre] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureHierachy()
-        configureLayout()
-        configureUI()
+        callTrendingMovieRequest() {
+            self.callMovieGenreList {
+                self.configureHierachy()
+                self.configureLayout()
+                self.configureUI()
+            }
+        }
     }
 
 
@@ -62,14 +68,59 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as! HomeTableViewCell
+        let data = list[indexPath.row]
+        let genreList = genreList
+        cell.configure(data: data, genreList: genreList)
         
         return cell
     }
     
     
+}
+
+extension HomeViewController {
+    func callTrendingMovieRequest(completion: @escaping () -> Void) {
+        let url = "https://api.themoviedb.org/3/trending/movie/week"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url, method: .get, headers: header)
+            .responseDecodable(of: Movie.self) { response in
+            switch response.result {
+            case .success(let value):
+                self.list = value.results
+            case .failure(let error):
+                print(error)
+            }
+            completion()
+        }
+    }
+    
+    func callMovieGenreList(completion: @escaping () -> Void) {
+        let url = "https://api.themoviedb.org/3/genre/movie/list"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url, method: .get, headers: header)
+            .responseDecodable(of: GenreList.self) { response in
+            switch response.result {
+            case .success(let value):
+                self.genreList = value.genres
+            case .failure(let error):
+                print(error)
+            }
+            completion()
+        }
+    }
 }
