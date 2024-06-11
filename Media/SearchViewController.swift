@@ -142,6 +142,7 @@ extension SearchViewController {
             case .success(let value):
                 if self.page == 1 {
                     self.list = value
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
                 } else {
                     self.list.results.append(contentsOf: value.results)
                 }
