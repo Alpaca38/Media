@@ -22,3 +22,9 @@ extension UITableViewCell: ReuseIdentifier {
         return String(describing: self)
     }
 }
+
+extension UICollectionViewCell: ReuseIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

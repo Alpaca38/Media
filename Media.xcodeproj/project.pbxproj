@@ -31,6 +31,9 @@
 		D1815FF82C172D34004BA146 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FF72C172D34004BA146 /* Extension+UILabel.swift */; };
 		D1815FFC2C1739B8004BA146 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FFB2C1739B8004BA146 /* CastTableViewCell.swift */; };
 		D1815FFF2C17437F004BA146 /* MovieCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FFE2C17437F004BA146 /* MovieCredit.swift */; };
+		D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160082C183ED6004BA146 /* SearchViewController.swift */; };
+		D181600B2C18416D004BA146 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */; };
+		D181600D2C184825004BA146 /* MovieSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600C2C184825004BA146 /* MovieSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		D1815FF72C172D34004BA146 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		D1815FFB2C1739B8004BA146 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		D1815FFE2C17437F004BA146 /* MovieCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCredit.swift; sourceTree = "<group>"; };
+		D18160082C183ED6004BA146 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		D181600C2C184825004BA146 /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 				D1815FB72C16D513004BA146 /* AppDelegate.swift */,
 				D1815FB92C16D513004BA146 /* SceneDelegate.swift */,
 				D1815FBB2C16D513004BA146 /* HomeViewController.swift */,
+				D18160082C183ED6004BA146 /* SearchViewController.swift */,
 				D1815FF52C170364004BA146 /* DetailViewController.swift */,
 				D1815FC02C16D515004BA146 /* Assets.xcassets */,
 				D1815FC22C16D515004BA146 /* LaunchScreen.storyboard */,
@@ -123,6 +130,7 @@
 				D1815FF12C16F11B004BA146 /* Movie.swift */,
 				D1815FF32C16F9EE004BA146 /* MovieGenre.swift */,
 				D1815FFE2C17437F004BA146 /* MovieCredit.swift */,
+				D181600C2C184825004BA146 /* MovieSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			children = (
 				D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */,
 				D1815FFB2C1739B8004BA146 /* CastTableViewCell.swift */,
+				D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -246,16 +255,19 @@
 				D1815FFC2C1739B8004BA146 /* CastTableViewCell.swift in Sources */,
 				D1815FFF2C17437F004BA146 /* MovieCredit.swift in Sources */,
 				D1815FDA2C16DAC8004BA146 /* Extension+UIView.swift in Sources */,
+				D181600D2C184825004BA146 /* MovieSearch.swift in Sources */,
 				D1815FB82C16D513004BA146 /* AppDelegate.swift in Sources */,
 				D1815FCF2C16D5F2004BA146 /* APIKey.swift in Sources */,
 				D1815FF82C172D34004BA146 /* Extension+UILabel.swift in Sources */,
 				D1815FD32C16D693004BA146 /* Extension+UIViewController.swift in Sources */,
 				D1815FE62C16DBB1004BA146 /* HomeTableViewCell.swift in Sources */,
 				D1815FF22C16F11B004BA146 /* Movie.swift in Sources */,
+				D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */,
 				D1815FBA2C16D513004BA146 /* SceneDelegate.swift in Sources */,
 				D1815FD82C16D829004BA146 /* ConfigureProtocol.swift in Sources */,
 				D1815FF42C16F9EE004BA146 /* MovieGenre.swift in Sources */,
 				D1815FED2C16E2FC004BA146 /* Extension+UIColor.swift in Sources */,
+				D181600B2C18416D004BA146 /* SearchCollectionViewCell.swift in Sources */,
 				D1815FF62C170364004BA146 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

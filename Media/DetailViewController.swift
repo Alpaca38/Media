@@ -140,7 +140,6 @@ extension DetailViewController {
             .responseDecodable(of: MovieCredit.self) { response in
             switch response.result {
             case .success(let value):
-                print(value.cast)
                 self.list = value.cast
             case .failure(let error):
                 print(error)

@@ -63,7 +63,8 @@ extension HomeViewController {
     }
     
     @objc func searchButtonTapped() {
-        
+        let vc = SearchViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
