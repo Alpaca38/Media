@@ -58,6 +58,7 @@ extension SearchViewController: ConfigureProtocol {
         collectionView.backgroundColor = .backgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         
         searchBar.delegate = self
@@ -95,9 +96,23 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+extension SearchViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach {
+            if list.results.count - 2 == $0.item {
+                page += 1
+                callSearchRequest(query: searchBar.text!)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
+}
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
         page = 1
         callSearchRequest(query: searchBar.text!)
         
@@ -125,7 +140,11 @@ extension SearchViewController {
         .responseDecodable(of: SearchMovie.self) { response in
             switch response.result {
             case .success(let value):
-                self.list = value
+                if self.page == 1 {
+                    self.list = value
+                } else {
+                    self.list.results.append(contentsOf: value.results)
+                }
             case .failure(let error):
                 print(error)
             }
