@@ -52,8 +52,7 @@ extension HomeViewController: ConfigureProtocol {
         tableView.dataSource = self
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
         tableView.separatorStyle = .none
-        
-        
+        tableView.backgroundColor = .backgroundColor
     }
 }
 

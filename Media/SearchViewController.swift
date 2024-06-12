@@ -62,6 +62,9 @@ extension SearchViewController: ConfigureProtocol {
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         
         searchBar.delegate = self
+        let image = UIImage()
+        searchBar.backgroundImage = image
+        searchBar.backgroundColor = .backgroundColor
         
         categoryLabel.font = .boldTitleFont
         categoryLabel.text = "Movie"
