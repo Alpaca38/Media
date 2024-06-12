@@ -66,6 +66,7 @@ extension SearchViewController: ConfigureProtocol {
         let image = UIImage()
         searchBar.backgroundImage = image
         searchBar.backgroundColor = .backgroundColor
+        searchBar.placeholder = "영화 제목을 검색해보세요."
         
         categoryLabel.font = .boldTitleFont
         categoryLabel.text = "Movie"
