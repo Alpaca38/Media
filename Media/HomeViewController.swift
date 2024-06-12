@@ -41,7 +41,7 @@ extension HomeViewController: ConfigureProtocol {
     }
     
     func configureUI() {
-        setNavigationBar(tintColor: .blue, title: nil)
+        setNavigationBar(tintColor: .black, title: nil)
         let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
         let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonTapped))
         navigationItem.leftBarButtonItem = listButton

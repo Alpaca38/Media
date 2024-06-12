@@ -55,6 +55,7 @@ extension SearchViewController: ConfigureProtocol {
     }
     
     func configureUI() {
+        setNavigationBar(tintColor: .black, title: "영화 검색")
         collectionView.backgroundColor = .backgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
