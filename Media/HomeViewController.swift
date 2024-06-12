@@ -58,11 +58,11 @@ extension HomeViewController: ConfigureProtocol {
 }
 
 extension HomeViewController {
-    @objc func listButtonTapped() {
+    @objc private func listButtonTapped() {
         
     }
     
-    @objc func searchButtonTapped() {
+    @objc private func searchButtonTapped() {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

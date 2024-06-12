@@ -34,6 +34,7 @@
 		D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160082C183ED6004BA146 /* SearchViewController.swift */; };
 		D181600B2C18416D004BA146 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */; };
 		D181600D2C184825004BA146 /* MovieSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600C2C184825004BA146 /* MovieSearch.swift */; };
+		D18160152C19461B004BA146 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160142C19461B004BA146 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D18160082C183ED6004BA146 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		D181600C2C184825004BA146 /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
+		D18160142C19461B004BA146 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D1815FB62C16D513004BA146 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				D18160132C194608004BA146 /* Custom */,
 				D1815FE42C16DB94004BA146 /* Cell */,
 				D1815FD42C16D71F004BA146 /* Protocol */,
 				D1815FD12C16D654004BA146 /* Extension */,
@@ -164,6 +167,14 @@
 				D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D18160132C194608004BA146 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D18160142C19461B004BA146 /* BaseViewController.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 				D1815FD62C16D735004BA146 /* ReuseIdentifier.swift in Sources */,
 				D1815FFC2C1739B8004BA146 /* CastTableViewCell.swift in Sources */,
 				D1815FFF2C17437F004BA146 /* MovieCredit.swift in Sources */,
+				D18160152C19461B004BA146 /* BaseViewController.swift in Sources */,
 				D1815FDA2C16DAC8004BA146 /* Extension+UIView.swift in Sources */,
 				D181600D2C184825004BA146 /* MovieSearch.swift in Sources */,
 				D1815FB82C16D513004BA146 /* AppDelegate.swift in Sources */,
