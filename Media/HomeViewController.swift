@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Alamofire
 import Toast
 
 class HomeViewController: BaseViewController {

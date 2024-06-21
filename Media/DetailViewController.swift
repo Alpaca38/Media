@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
-import Alamofire
+import Toast
 
 class DetailViewController: BaseViewController {
     

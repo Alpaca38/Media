@@ -69,4 +69,31 @@ class NetworkManager {
             }
         }
     }
+    
+    func getSearchData(query: String, page: Int, completion: @escaping (Result<SearchMovie, Error>) -> Void) {
+        let url = "https://api.themoviedb.org/3/search/movie"
+        
+        let parameters: Parameters = [
+            "query": query,
+            "page": page
+        ]
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: parameters,
+                   headers: header)
+        .responseDecodable(of: SearchMovie.self) { response in
+            switch response.result {
+            case .success(let value):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

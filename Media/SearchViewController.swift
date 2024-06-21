@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import Alamofire
+import Toast
 
 class SearchViewController: BaseViewController {
     
@@ -106,7 +106,7 @@ extension SearchViewController: UICollectionViewDataSourcePrefetching {
         indexPaths.forEach {
             if list.results.count - 2 == $0.item {
                 page += 1
-                callSearchRequest(query: searchBar.text!)
+                getSearchData(query: searchBar.text!, page: page)
             }
         }
     }
@@ -119,40 +119,23 @@ extension SearchViewController: UICollectionViewDataSourcePrefetching {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         page = 1
-        callSearchRequest(query: searchBar.text!)
-        
+        getSearchData(query: searchBar.text!, page: page)
     }
 }
 
-extension SearchViewController {
-    func callSearchRequest(query: String) {
-        let url = "https://api.themoviedb.org/3/search/movie"
-        
-        let parameters: Parameters = [
-            "query": query,
-            "page": page
-        ]
-        
-        let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": "Bearer " + APIKey.tmdbBearerKey
-        ]
-        
-        AF.request(url,
-                   method: .get,
-                   parameters: parameters,
-                   headers: header)
-        .responseDecodable(of: SearchMovie.self) { response in
-            switch response.result {
-            case .success(let value):
+private extension SearchViewController {
+    func getSearchData(query: String, page: Int) {
+        NetworkManager.shared.getSearchData(query: query, page: page) { result in
+            switch result {
+            case .success(let success):
                 if self.page == 1 {
-                    self.list = value
+                    self.list = success
                     self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
                 } else {
-                    self.list.results.append(contentsOf: value.results)
+                    self.list.results.append(contentsOf: success.results)
                 }
-            case .failure(let error):
-                print(error)
+            case .failure(let failure):
+                self.view.makeToast("검색결과를 받아오는데 실패했습니다. \(failure.localizedDescription)")
             }
         }
     }
