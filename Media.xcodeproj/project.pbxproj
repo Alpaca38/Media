@@ -35,6 +35,8 @@
 		D181600B2C18416D004BA146 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */; };
 		D181600D2C184825004BA146 /* MovieSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181600C2C184825004BA146 /* MovieSearch.swift */; };
 		D18160152C19461B004BA146 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160142C19461B004BA146 /* BaseViewController.swift */; };
+		D1E586E42C254CC700F3E452 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586E32C254CC700F3E452 /* NetworkManager.swift */; };
+		D1E586E72C254F2800F3E452 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D1E586E62C254F2800F3E452 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,7 @@
 		D181600A2C18416D004BA146 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		D181600C2C184825004BA146 /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
 		D18160142C19461B004BA146 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D1E586E32C254CC700F3E452 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 				D1815FE32C16DB26004BA146 /* Kingfisher in Frameworks */,
 				D1815FDD2C16DB0D004BA146 /* SnapKit in Frameworks */,
 				D1815FE92C16E0A4004BA146 /* Cosmos in Frameworks */,
+				D1E586E72C254F2800F3E452 /* Toast in Frameworks */,
 				D1815FE02C16DB1D004BA146 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +105,7 @@
 		D1815FB62C16D513004BA146 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				D1E586E22C254CC000F3E452 /* Network */,
 				D18160132C194608004BA146 /* Custom */,
 				D1815FE42C16DB94004BA146 /* Cell */,
 				D1815FD42C16D71F004BA146 /* Protocol */,
@@ -177,6 +182,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		D1E586E22C254CC000F3E452 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D1E586E32C254CC700F3E452 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,6 +211,7 @@
 				D1815FDF2C16DB1D004BA146 /* Alamofire */,
 				D1815FE22C16DB26004BA146 /* Kingfisher */,
 				D1815FE82C16E0A4004BA146 /* Cosmos */,
+				D1E586E62C254F2800F3E452 /* Toast */,
 			);
 			productName = Media;
 			productReference = D1815FB42C16D513004BA146 /* Media.app */;
@@ -232,6 +246,7 @@
 				D1815FDE2C16DB1D004BA146 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D1815FE12C16DB26004BA146 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				D1815FE72C16E0A4004BA146 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				D1E586E52C254F2700F3E452 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = D1815FB52C16D513004BA146 /* Products */;
 			projectDirPath = "";
@@ -264,6 +279,7 @@
 				D1815FBC2C16D513004BA146 /* HomeViewController.swift in Sources */,
 				D1815FD62C16D735004BA146 /* ReuseIdentifier.swift in Sources */,
 				D1815FFC2C1739B8004BA146 /* CastTableViewCell.swift in Sources */,
+				D1E586E42C254CC700F3E452 /* NetworkManager.swift in Sources */,
 				D1815FFF2C17437F004BA146 /* MovieCredit.swift in Sources */,
 				D18160152C19461B004BA146 /* BaseViewController.swift in Sources */,
 				D1815FDA2C16DAC8004BA146 /* Extension+UIView.swift in Sources */,
@@ -535,6 +551,14 @@
 				minimumVersion = 25.0.1;
 			};
 		};
+		D1E586E52C254F2700F3E452 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -557,6 +581,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D1815FE72C16E0A4004BA146 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		D1E586E62C254F2800F3E452 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E586E52C254F2700F3E452 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

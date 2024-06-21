@@ -132,7 +132,7 @@ extension HomeTableViewCell: ConfigureProtocol {
         detailLabel.isUserInteractionEnabled = false
     }
     
-    func configure(data: Result, genreList: [Genre]) {
+    func configure(data: movieResult, genreList: [Genre]) {
         dateLabel.text = data.releaseDate
         
         genreList.forEach {

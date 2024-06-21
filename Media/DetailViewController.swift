@@ -19,7 +19,7 @@ class DetailViewController: BaseViewController {
     let castLabel = UILabel()
     let castTableView = UITableView()
     
-    var data: Result?
+    var data: movieResult?
     
     var list: [Cast] = []
 

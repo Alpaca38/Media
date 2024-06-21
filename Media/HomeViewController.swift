@@ -8,24 +8,30 @@
 import UIKit
 import SnapKit
 import Alamofire
+import Toast
 
 class HomeViewController: BaseViewController {
     
     let tableView = UITableView()
-    var list: [Result] = []
-    var genreList: [Genre] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        callTrendingMovieRequest() {
-            self.callMovieGenreList {
-                self.configureHierachy()
-                self.configureLayout()
-                self.configureUI()
-            }
+    var list: [movieResult] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var genreList: [Genre] = [] {
+        didSet {
+            tableView.reloadData()
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getTrendingMovieData()
+        getMovieGenreList()
+        configureHierachy()
+        configureLayout()
+        configureUI()
+    }
 
 }
 
@@ -90,44 +96,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension HomeViewController {
-    func callTrendingMovieRequest(completion: @escaping () -> Void) {
-        let url = "https://api.themoviedb.org/3/trending/movie/week"
-        
-        let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": "Bearer " + APIKey.tmdbBearerKey
-        ]
-        
-        AF.request(url, method: .get, headers: header)
-            .responseDecodable(of: Movie.self) { response in
-            switch response.result {
-            case .success(let value):
-                self.list = value.results
-            case .failure(let error):
-                print(error)
+private extension HomeViewController {
+    func getTrendingMovieData() {
+        NetworkManager.shared.getTrendingMovieData { result in
+            switch result {
+            case .success(let success):
+                self.list = success.results
+            case .failure(let failure):
+                self.view.makeToast("영화 정보를 받아오는데 실패 했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
             }
-            completion()
         }
     }
     
-    func callMovieGenreList(completion: @escaping () -> Void) {
-        let url = "https://api.themoviedb.org/3/genre/movie/list"
-        
-        let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": "Bearer " + APIKey.tmdbBearerKey
-        ]
-        
-        AF.request(url, method: .get, headers: header)
-            .responseDecodable(of: GenreList.self) { response in
-            switch response.result {
-            case .success(let value):
-                self.genreList = value.genres
-            case .failure(let error):
-                print(error)
+    func getMovieGenreList() {
+        NetworkManager.shared.getMovieGenreList { result in
+            switch result {
+            case .success(let success):
+                self.genreList = success.genres
+            case .failure(let failure):
+                self.view.makeToast("장르 정보를 받아오는데 실패 했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
             }
-            completion()
         }
     }
 }
