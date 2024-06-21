@@ -21,16 +21,18 @@ class DetailViewController: BaseViewController {
     
     var data: movieResult?
     
-    var list: [Cast] = []
+    var list: [Cast] = [] {
+        didSet {
+            castTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        callCreditRequest {
-            self.configureHierachy()
-            self.configureLayout()
-            self.configureUI()
-        }
+        getMovieCredit()
+        configureHierachy()
+        configureLayout()
+        configureUI()
     }
 
 }
@@ -121,30 +123,17 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension DetailViewController {
-    
-    func callCreditRequest(completion: @escaping () -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/\(data!.id)/credits"
-        
-        let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": "Bearer " + APIKey.tmdbBearerKey
-        ]
-        
-        AF.request(url, method: .get, headers: header)
-            .validate()
-            .responseDecodable(of: MovieCredit.self) { response in
-            switch response.result {
-            case .success(let value):
-                self.list = value.cast
-            case .failure(let error):
-                print(error)
+    func getMovieCredit() {
+        NetworkManager.shared.getMovieCredit(id: data!.id) { result in
+            switch result {
+            case .success(let success):
+                self.list = success.cast
+            case .failure(let failure):
+                self.view.makeToast("크레딧 정보를 받아오지 못했습니다. \(failure.localizedDescription)", duration: 2, position: .bottom)
             }
-            completion()
         }
     }
 }

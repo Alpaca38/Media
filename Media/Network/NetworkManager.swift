@@ -49,4 +49,24 @@ class NetworkManager {
             }
         }
     }
+    
+    func getMovieCredit(id: Int, completion: @escaping (Result<MovieCredit, Error>) -> Void) {
+        let url = "https://api.themoviedb.org/3/movie/\(id)/credits"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url, method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: MovieCredit.self) { response in
+            switch response.result {
+            case .success(let value):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
