@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class SearchView: UIView {
     let searchBar = UISearchBar()
