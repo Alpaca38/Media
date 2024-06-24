@@ -110,6 +110,7 @@ class DetailPosterView: UIView {
             $0.top.equalTo(posterLabel.snp.bottom).offset(10)
             $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
             $0.height.equalTo(self).multipliedBy(0.35)
+            $0.bottom.equalToSuperview()
         }
     }
     

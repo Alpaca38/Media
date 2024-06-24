@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailPosterViewController: BaseViewController {
     var data: movieResult?
+    let scrollView = UIScrollView()
     let detailPosterView = DetailPosterView()
     
     override func loadView() {
@@ -19,16 +21,34 @@ class DetailPosterViewController: BaseViewController {
         detailPosterView.recommendCollectionView.dataSource = self
         detailPosterView.posterCollectionView.delegate = self
         detailPosterView.posterCollectionView.dataSource = self
-        view = detailPosterView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        setupLayout()
+    }
+    
+    private func setup() {
         guard let data else { return }
         detailPosterView.getSimilarMovieData(movieID: data.id)
         detailPosterView.getRecommendMovieData(movieID: data.id)
         detailPosterView.getPosterData(movieID: data.id)
         detailPosterView.titleLabel.text = data.title
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(detailPosterView)
+    }
+    
+    private func setupLayout() {
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        detailPosterView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
     }
 }
 
