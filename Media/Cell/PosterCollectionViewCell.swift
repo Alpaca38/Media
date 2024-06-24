@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class SearchCollectionViewCell: UICollectionViewCell {
+class PosterCollectionViewCell: UICollectionViewCell {
     
     let posterimageView = UIImageView()
     
@@ -25,7 +25,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension SearchCollectionViewCell: ConfigureProtocol {
+extension PosterCollectionViewCell: ConfigureProtocol {
     func configureHierachy() {
         contentView.addSubview(posterimageView)
     }
@@ -50,6 +50,29 @@ extension SearchCollectionViewCell: ConfigureProtocol {
         } else {
             posterimageView.backgroundColor = .lightGray
         }
-        
+    }
+    
+    func configure(data: SimilarMovieResult) {
+        if let poster = data.posterPath {
+            let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
+            posterimageView.kf.setImage(with: url)
+        } else {
+            posterimageView.backgroundColor = .lightGray
+        }
+    }
+    
+    func configure(data: RecommendationResult) {
+        if let poster = data.posterPath {
+            let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
+            posterimageView.kf.setImage(with: url)
+        } else {
+            posterimageView.backgroundColor = .lightGray
+        }
+    }
+    
+    func configure(data: Backdrop) {
+        let poster = data.filePath
+        let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
+        posterimageView.kf.setImage(with: url)
     }
 }

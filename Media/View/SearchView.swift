@@ -58,7 +58,7 @@ private extension SearchView {
     
     func configureUI() {
         collectionView.backgroundColor = .backgroundColor
-        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
+        collectionView.register(PosterCollectionViewCell.self, forCellWithReuseIdentifier: PosterCollectionViewCell.identifier)
         
         let image = UIImage()
         searchBar.backgroundImage = image

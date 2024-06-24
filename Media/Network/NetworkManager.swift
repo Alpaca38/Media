@@ -96,4 +96,67 @@ class NetworkManager {
             }
         }
     }
+    
+    func getSimilarMovieData(movieID: Int, completion: @escaping (Result<SimilarMovie, Error>) -> ()) {
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)/similar"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   headers: header)
+        .responseDecodable(of: SimilarMovie.self) { response in
+            switch response.result {
+            case .success(let value):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getRecommendMovieData(movieID: Int, completion: @escaping (Result<MovieRecommendation, Error>) -> ()) {
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)/recommendations"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   headers: header)
+        .responseDecodable(of: MovieRecommendation.self) { response in
+            switch response.result {
+            case .success(let value):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getPosterData(movieID: Int, completion: @escaping (Result<MovieImage, Error>) -> ()) {
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)/images"
+        
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer " + APIKey.tmdbBearerKey
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   headers: header)
+        .responseDecodable(of: MovieImage.self) { response in
+            switch response.result {
+            case .success(let value):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

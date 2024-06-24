@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import SnapKit
-import Toast
 
 class SearchViewController: BaseViewController {
     
@@ -42,7 +40,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as! SearchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as! PosterCollectionViewCell
         let data = searchView.list.results[indexPath.item]
         cell.configure(data: data)
         

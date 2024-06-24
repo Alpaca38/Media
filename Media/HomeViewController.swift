@@ -62,8 +62,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let data = homeView.list[indexPath.row]
+//        let vc = DetailViewController()
+//        vc.data = data
         let data = homeView.list[indexPath.row]
-        let vc = DetailViewController()
+        let vc = DetailPosterViewController()
         vc.data = data
         navigationController?.pushViewController(vc, animated: true)
     }
