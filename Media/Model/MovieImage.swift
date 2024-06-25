@@ -11,11 +11,16 @@ struct MovieImage: Codable {
     let backdrops: [Backdrop]
     let id: Int
     let logos, posters: [Backdrop]
+    
 }
 
-struct Backdrop: Codable {
+struct Backdrop: Codable, PosterData {
     let filePath: String
 
+    var path: String? {
+        return filePath
+    }
+    
     enum CodingKeys: String, CodingKey {
         case filePath = "file_path"
     }

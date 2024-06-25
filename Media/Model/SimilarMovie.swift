@@ -19,8 +19,12 @@ struct SimilarMovie: Codable {
     }
 }
 
-struct SimilarMovieResult: Codable {
+struct SimilarMovieResult: Codable, PosterData {
     let posterPath: String?
+    
+    var path: String? {
+        return posterPath
+    }
     
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"

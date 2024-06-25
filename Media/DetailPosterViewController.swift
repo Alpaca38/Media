@@ -12,12 +12,17 @@ import Toast
 enum DetailPosterCategory: String, CaseIterable {
     case similar = "비슷한 영화"
     case recommend = "추천 영화"
+    case poster = "포스터"
 }
 
 class DetailPosterViewController: BaseViewController {
     let detailPosterView = DetailPosterView()
     var data: movieResult?
-    var list = [[SimilarMovieResult(posterPath: "")],[SimilarMovieResult(posterPath: "")]]
+    var list: [[PosterData]] = [
+        [SimilarMovieResult(posterPath: "")],
+        [SimilarMovieResult(posterPath: "")],
+        [Backdrop(filePath: "")]
+    ]
     
     override func loadView() {
         super.loadView()
@@ -63,18 +68,18 @@ private extension DetailPosterViewController {
                 waitGroup.leave()
             }
         }
-//        waitGroup.enter()
-//        DispatchQueue.global().async(group: waitGroup) {
-//            NetworkManager.shared.getPosterData(movieID: data.id) { result in
-//                switch result {
-//                case .success(let success):
-//                    self.list[2] = success.posters
-//                case .failure(let failure):
-//                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
-//                }
-//                waitGroup.leave()
-//            }
-//        }
+        waitGroup.enter()
+        DispatchQueue.global().async(group: waitGroup) {
+            NetworkManager.shared.getPosterData(movieID: data.id) { result in
+                switch result {
+                case .success(let success):
+                    self.list[2] = success.posters
+                case .failure(let failure):
+                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
+                }
+                waitGroup.leave()
+            }
+        }
         waitGroup.notify(queue: .main) {
             self.detailPosterView.tableView.reloadData()
         }

@@ -52,8 +52,8 @@ extension PosterCollectionViewCell: ConfigureProtocol {
         }
     }
     
-    func configure(data: SimilarMovieResult) {
-        if let poster = data.posterPath {
+    func configure(data: PosterData) {
+        if let poster = data.path {
             let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
             posterimageView.kf.setImage(with: url)
         } else {
@@ -70,9 +70,9 @@ extension PosterCollectionViewCell: ConfigureProtocol {
 //        }
 //    }
     
-    func configure(data: Backdrop) {
-        let poster = data.filePath
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
-        posterimageView.kf.setImage(with: url)
-    }
+//    func configure(data: Backdrop) {
+//        let poster = data.filePath
+//        let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
+//        posterimageView.kf.setImage(with: url)
+//    }
 }
