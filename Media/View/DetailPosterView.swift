@@ -19,7 +19,7 @@ class DetailPosterView: BaseView {
     
     lazy var tableView = {
         let view = UITableView()
-        view.rowHeight = 200
+        view.backgroundColor = .backgroundColor
         view.register(PosterTableViewCell.self, forCellReuseIdentifier: PosterTableViewCell.identifier)
         self.addSubview(view)
         return view

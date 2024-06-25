@@ -47,8 +47,8 @@ class PosterTableViewCell: UITableViewCell {
     
     private func layout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width - 60
-        layout.itemSize = CGSize(width: width/3, height: width/2)
+//        let width = UIScreen.main.bounds.width - 60
+//        layout.itemSize = CGSize(width: width/3, height: width/2)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10

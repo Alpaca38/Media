@@ -74,7 +74,7 @@ private extension DetailPosterViewController {
                 switch result {
                 case .success(let success):
                     self.list[2] = success.posters
-                case .failure(let failure):
+                case .failure(_):
                     self.view.makeToast("포스터 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
                 }
                 waitGroup.leave()
@@ -101,6 +101,14 @@ extension DetailPosterViewController: UITableViewDelegate, UITableViewDataSource
         cell.collectionView.reloadData()
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 2 {
+            return 300
+        } else {
+            return 200
+        }
+    }
 }
 
 extension DetailPosterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -113,5 +121,15 @@ extension DetailPosterViewController: UICollectionViewDelegate, UICollectionView
         let data = list[collectionView.tag][indexPath.item]
         cell.configure(data: data)
         return cell
+    }
+}
+
+extension DetailPosterViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView.tag == 2 {
+            return CGSize(width: 180, height: 240)
+        } else {
+            return CGSize(width: 120, height: 160)
+        }
     }
 }
