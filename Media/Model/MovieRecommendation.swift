@@ -6,25 +6,23 @@
 //
 
 import Foundation
-
-struct MovieRecommendation: Codable {
-    let page: Int
-    let results: [RecommendationResult]
-    let totalPages, totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-}
-
-struct RecommendationResult: Codable {
-    let originalTitle: String
-    let posterPath: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case originalTitle = "original_title"
-        case posterPath = "poster_path"
-    }
-}
+//
+//struct MovieRecommendation: Codable {
+//    let page: Int
+//    let results: [RecommendationResult]
+//    let totalPages, totalResults: Int
+//
+//    enum CodingKeys: String, CodingKey {
+//        case page, results
+//        case totalPages = "total_pages"
+//        case totalResults = "total_results"
+//    }
+//}
+//
+//struct RecommendationResult: Codable {
+//    let posterPath: String?
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case posterPath = "poster_path"
+//    }
+//}

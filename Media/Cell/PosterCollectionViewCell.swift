@@ -60,15 +60,15 @@ extension PosterCollectionViewCell: ConfigureProtocol {
             posterimageView.backgroundColor = .lightGray
         }
     }
-    
-    func configure(data: RecommendationResult) {
-        if let poster = data.posterPath {
-            let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
-            posterimageView.kf.setImage(with: url)
-        } else {
-            posterimageView.backgroundColor = .lightGray
-        }
-    }
+//    
+//    func configure(data: RecommendationResult) {
+//        if let poster = data.posterPath {
+//            let url = URL(string: "https://image.tmdb.org/t/p/original\(poster)")
+//            posterimageView.kf.setImage(with: url)
+//        } else {
+//            posterimageView.backgroundColor = .lightGray
+//        }
+//    }
     
     func configure(data: Backdrop) {
         let poster = data.filePath

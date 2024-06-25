@@ -118,7 +118,7 @@ class NetworkManager {
         }
     }
     
-    func getRecommendMovieData(movieID: Int, completion: @escaping (Result<MovieRecommendation, Error>) -> ()) {
+    func getRecommendMovieData(movieID: Int, completion: @escaping (Result<SimilarMovie, Error>) -> ()) {
         let url = "https://api.themoviedb.org/3/movie/\(movieID)/recommendations"
         
         let header: HTTPHeaders = [
@@ -129,7 +129,7 @@ class NetworkManager {
         AF.request(url,
                    method: .get,
                    headers: header)
-        .responseDecodable(of: MovieRecommendation.self) { response in
+        .responseDecodable(of: SimilarMovie.self) { response in
             switch response.result {
             case .success(let value):
                 completion(.success(value))

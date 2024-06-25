@@ -46,6 +46,8 @@
 		D1E5873D2C2971BF00F3E452 /* DetailPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5873C2C2971BF00F3E452 /* DetailPosterViewController.swift */; };
 		D1E5873F2C2971EE00F3E452 /* DetailPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5873E2C2971EE00F3E452 /* DetailPosterView.swift */; };
 		D1E587412C2979DA00F3E452 /* PosterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587402C2979DA00F3E452 /* PosterCollectionView.swift */; };
+		D1E5876B2C2AACA100F3E452 /* PosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5876A2C2AACA100F3E452 /* PosterTableViewCell.swift */; };
+		D1E5876D2C2AAF1A00F3E452 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5876C2C2AAF1A00F3E452 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		D1E5873C2C2971BF00F3E452 /* DetailPosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPosterViewController.swift; sourceTree = "<group>"; };
 		D1E5873E2C2971EE00F3E452 /* DetailPosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPosterView.swift; sourceTree = "<group>"; };
 		D1E587402C2979DA00F3E452 /* PosterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionView.swift; sourceTree = "<group>"; };
+		D1E5876A2C2AACA100F3E452 /* PosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTableViewCell.swift; sourceTree = "<group>"; };
+		D1E5876C2C2AAF1A00F3E452 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 				D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */,
 				D1815FFB2C1739B8004BA146 /* CastTableViewCell.swift */,
 				D181600A2C18416D004BA146 /* PosterCollectionViewCell.swift */,
+				D1E5876A2C2AACA100F3E452 /* PosterTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				D18160142C19461B004BA146 /* BaseViewController.swift */,
 				D1E587402C2979DA00F3E452 /* PosterCollectionView.swift */,
+				D1E5876C2C2AAF1A00F3E452 /* BaseView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				D1E5873B2C29703E00F3E452 /* MovieImage.swift in Sources */,
 				D1E586E42C254CC700F3E452 /* NetworkManager.swift in Sources */,
 				D1815FFF2C17437F004BA146 /* MovieCredit.swift in Sources */,
+				D1E5876D2C2AAF1A00F3E452 /* BaseView.swift in Sources */,
 				D18160152C19461B004BA146 /* BaseViewController.swift in Sources */,
 				D1E587412C2979DA00F3E452 /* PosterCollectionView.swift in Sources */,
 				D1E587392C29337600F3E452 /* MovieRecommendation.swift in Sources */,
@@ -330,6 +337,7 @@
 				D1815FCF2C16D5F2004BA146 /* APIKey.swift in Sources */,
 				D1815FF82C172D34004BA146 /* Extension+UILabel.swift in Sources */,
 				D1815FD32C16D693004BA146 /* Extension+UIViewController.swift in Sources */,
+				D1E5876B2C2AACA100F3E452 /* PosterTableViewCell.swift in Sources */,
 				D1815FE62C16DBB1004BA146 /* HomeTableViewCell.swift in Sources */,
 				D1815FF22C16F11B004BA146 /* Movie.swift in Sources */,
 				D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */,

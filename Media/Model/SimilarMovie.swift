@@ -20,11 +20,9 @@ struct SimilarMovie: Codable {
 }
 
 struct SimilarMovieResult: Codable {
-    let originalTitle: String
     let posterPath: String?
     
     enum CodingKeys: String, CodingKey {
-        case originalTitle = "original_title"
         case posterPath = "poster_path"
     }
 }
