@@ -11,7 +11,7 @@ import Toast
 
 class HomeView: UIView {
     let tableView = UITableView()
-    var list: [movieResult] = [] {
+    var list: [TrendingResult] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -25,8 +25,7 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
-        getTrendingMovieData()
-        getMovieGenreList()
+        getMovieData()
     }
     
     private func configureView() {
@@ -45,8 +44,8 @@ class HomeView: UIView {
 }
 
 private extension HomeView {
-    func getTrendingMovieData() {
-        NetworkManager.shared.getTrendingMovieData { result in
+    func getMovieData() {
+        NetworkManager.shared.getMovieData(api: .trendingMovie, responseType: Trending.self) { result in
             switch result {
             case .success(let success):
                 self.list = success.results
@@ -54,10 +53,8 @@ private extension HomeView {
                 self.makeToast("영화 정보를 받아오는데 실패 했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
             }
         }
-    }
-    
-    func getMovieGenreList() {
-        NetworkManager.shared.getMovieGenreList { result in
+        
+        NetworkManager.shared.getMovieData(api: .movieGenre, responseType: GenreList.self) { result in
             switch result {
             case .success(let success):
                 self.genreList = success.genres

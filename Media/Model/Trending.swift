@@ -8,9 +8,9 @@
 import Foundation
 
 // MARK: - Movie
-struct Movie: Codable {
+struct Trending: Codable {
     let page: Int
-    let results: [movieResult]
+    let results: [TrendingResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ struct Movie: Codable {
 }
 
 // MARK: - Result
-struct movieResult: Codable {
+struct TrendingResult: Codable {
     let backdropPath: String
     let id: Int
     let originalTitle, overview, posterPath: String

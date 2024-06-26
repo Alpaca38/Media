@@ -17,7 +17,7 @@ enum DetailPosterCategory: String, CaseIterable {
 
 class DetailPosterViewController: BaseViewController {
     let detailPosterView = DetailPosterView()
-    var data: movieResult?
+    var data: TrendingResult?
     var list: [[PosterData]] = [
         [SimilarMovieResult(posterPath: "")],
         [SimilarMovieResult(posterPath: "")],
@@ -45,37 +45,36 @@ private extension DetailPosterViewController {
         let waitGroup = DispatchGroup()
         waitGroup.enter()
         DispatchQueue.global().async(group: waitGroup) {
-            NetworkManager.shared.getSimilarMovieData(movieID: data.id) { result in
+            NetworkManager.shared.getMovieData(api: .similarMovie(movieID: data.id), responseType: SimilarMovie.self) { result in
                 switch result {
                 case .success(let success):
                     self.list[0] = success.results
-                case .failure(_):
-                    print("fail")
-                    self.view.makeToast("비슷한 영화 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
+                case .failure(let failure):
+                    self.view.makeToast("비슷한 영화 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }
         }
         waitGroup.enter()
         DispatchQueue.global().async(group: waitGroup) {
-            NetworkManager.shared.getRecommendMovieData(movieID: data.id) { result in
+            NetworkManager.shared.getMovieData(api: .recommendMovie(movieID: data.id), responseType: SimilarMovie.self) { result in
                 switch result {
                 case .success(let success):
                     self.list[1] = success.results
-                case .failure(_):
-                    self.view.makeToast("추천 영화 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
+                case .failure(let failure):
+                    self.view.makeToast("추천 영화 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }
         }
         waitGroup.enter()
         DispatchQueue.global().async(group: waitGroup) {
-            NetworkManager.shared.getPosterData(movieID: data.id) { result in
+            NetworkManager.shared.getMovieData(api: .moviePoster(movieID: data.id), responseType: MovieImage.self) { result in
                 switch result {
                 case .success(let success):
                     self.list[2] = success.posters
-                case .failure(_):
-                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다.", duration: 2, position: .center)
+                case .failure(let failure):
+                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }

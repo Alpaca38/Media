@@ -11,7 +11,7 @@ import Kingfisher
 class DetailViewController: BaseViewController {
     
     let detailView = DetailView()
-    var data: movieResult?
+    var data: TrendingResult?
     
     override func loadView() {
         super.loadView()

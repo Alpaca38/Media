@@ -84,12 +84,16 @@ private extension SearchView {
 
 extension SearchView {
     func getSearchData(query: String, page: Int) {
-        NetworkManager.shared.getSearchData(query: query, page: page) { result in
+        NetworkManager.shared.getMovieData(api: .searchMovie(query: query, page: page), responseType: SearchMovie.self) { result in
             switch result {
             case .success(let success):
                 if self.page == 1 {
                     self.list = success
-                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    if !self.list.results.isEmpty {
+                        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    } else {
+                        self.makeToast("검색결과가 없습니다.", duration: 2, position: .center)
+                    }
                 } else {
                     self.list.results.append(contentsOf: success.results)
                 }
