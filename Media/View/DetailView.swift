@@ -43,7 +43,8 @@ private extension DetailView {
     
     func configureLayout() {
         posterImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.horizontalEdges.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
         infoView.snp.makeConstraints {
@@ -101,7 +102,7 @@ private extension DetailView {
 }
 
 extension DetailView {
-    func getMovieCredit(data: TrendingResult) {
+    func getMovieCredit(data: SearchResult) {
         NetworkManager.shared.getMovieData(api: .movieCreidt(id: data.id), responseType: MovieCredit.self) { result in
             switch result {
             case .success(let success):

@@ -21,4 +21,7 @@ struct SearchMovie: Codable {
 
 struct SearchResult: Codable {
     let poster_path: String?
+    let id: Int
+    let original_title: String
+    let overview: String
 }
