@@ -20,7 +20,8 @@ class DetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailView.getMovieCredit(data: data!)
+        guard let data else { return }
+        detailView.getMovieCredit(data: data)
         configureUI()
     }
 

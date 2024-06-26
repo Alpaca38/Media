@@ -10,7 +10,7 @@ import SnapKit
 import Cosmos
 import Kingfisher
 
-class HomeTableViewCell: UITableViewCell {
+class HomeTableViewCell: BaseTableViewCell {
     
     let dateLabel = UILabel()
     let categoryLabel = UILabel()
@@ -22,28 +22,14 @@ class HomeTableViewCell: UITableViewCell {
     let separatorView = UIView()
     let detailLabel = UILabel()
     let detailButton = UIButton()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureHierachy()
-        configureLayout()
-        configureUI()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension HomeTableViewCell: ConfigureProtocol {
-    func configureHierachy() {
+    override func configureHierachy() {
         contentView.addSubviews([dateLabel, categoryLabel, posterView])
         posterView.addSubviews([posterImageView, posterInfoView])
         posterInfoView.addSubviews([titleLabel, ratingView, separatorView, detailLabel, detailButton])
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         dateLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview().offset(20)
         }
@@ -97,7 +83,7 @@ extension HomeTableViewCell: ConfigureProtocol {
         
     }
     
-    func configureUI() {
+    override func configureUI() {
         backgroundColor = .backgroundColor
         selectionStyle = .none
         
@@ -131,7 +117,9 @@ extension HomeTableViewCell: ConfigureProtocol {
         detailButton.tintColor = .black
         detailLabel.isUserInteractionEnabled = false
     }
-    
+}
+
+extension HomeTableViewCell {
     func configure(data: TrendingResult, genreList: [Genre]) {
         dateLabel.text = data.releaseDate
         
@@ -148,7 +136,5 @@ extension HomeTableViewCell: ConfigureProtocol {
         
         ratingView.text = data.ratingString
         ratingView.rating = data.voteAverage
-        
     }
-    
 }

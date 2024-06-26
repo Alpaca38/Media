@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class CastTableViewCell: UITableViewCell {
+class CastTableViewCell: BaseTableViewCell {
     
     let actorImageView = UIImageView()
     let actorNameLabel = UILabel()
@@ -25,25 +25,11 @@ class CastTableViewCell: UITableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureHierachy()
-        configureLayout()
-        configureUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension CastTableViewCell: ConfigureProtocol {
-    func configureHierachy() {
+    override func configureHierachy() {
         contentView.addSubview(actorImageView)
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         actorImageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.verticalEdges.equalToSuperview().inset(8)
@@ -56,7 +42,7 @@ extension CastTableViewCell: ConfigureProtocol {
         }
     }
     
-    func configureUI() {
+    override func configureUI() {
         backgroundColor = .white
         
         actorImageView.clipsToBounds = true
@@ -71,7 +57,9 @@ extension CastTableViewCell: ConfigureProtocol {
         castNameLabel.textColor = .contentColor
         castNameLabel.numberOfLines = 0
     }
-    
+}
+
+extension CastTableViewCell {
     func configure(data: Cast) {
         if data.profile_path != nil {
             let url = URL(string: "https://image.tmdb.org/t/p/original\(data.profile_path!)")
