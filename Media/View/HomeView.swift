@@ -50,7 +50,7 @@ private extension HomeView {
             case .success(let success):
                 self.list = success.results
             case .failure(let failure):
-                self.makeToast("영화 정보를 받아오는데 실패 했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
+                self.makeToast("영화 정보를 받아오는데 실패 했습니다. \(failure.rawValue)", duration: 2, position: .center)
             }
         }
         
@@ -59,7 +59,7 @@ private extension HomeView {
             case .success(let success):
                 self.genreList = success.genres
             case .failure(let failure):
-                self.makeToast("장르 정보를 받아오는데 실패 했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
+                self.makeToast("장르 정보를 받아오는데 실패 했습니다. \(failure.rawValue)", duration: 2, position: .center)
             }
         }
     }

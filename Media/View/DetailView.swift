@@ -108,7 +108,7 @@ extension DetailView {
             case .success(let success):
                 self.list = success.cast
             case .failure(let failure):
-                self.makeToast("크레딧 정보를 받아오지 못했습니다. \(failure.localizedDescription)", duration: 2, position: .bottom)
+                self.makeToast("크레딧 정보를 받아오지 못했습니다. \(failure.rawValue)", duration: 2, position: .bottom)
             }
         }
     }

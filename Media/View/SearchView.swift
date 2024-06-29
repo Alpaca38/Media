@@ -98,7 +98,7 @@ extension SearchView {
                     self.list.results.append(contentsOf: success.results)
                 }
             case .failure(let failure):
-                self.makeToast("검색결과를 받아오는데 실패했습니다. \(failure.localizedDescription)")
+                self.makeToast("검색결과를 받아오는데 실패했습니다. \(failure.rawValue)")
             }
         }
     }

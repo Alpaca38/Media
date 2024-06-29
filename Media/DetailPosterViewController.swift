@@ -50,7 +50,7 @@ private extension DetailPosterViewController {
                 case .success(let success):
                     self.list[0] = success.results
                 case .failure(let failure):
-                    self.view.makeToast("비슷한 영화 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
+                    self.view.makeToast("비슷한 영화 정보를 불러오는데 실패했습니다. \(failure.rawValue)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }
@@ -62,7 +62,7 @@ private extension DetailPosterViewController {
                 case .success(let success):
                     self.list[1] = success.results
                 case .failure(let failure):
-                    self.view.makeToast("추천 영화 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
+                    self.view.makeToast("추천 영화 정보를 불러오는데 실패했습니다. \(failure.rawValue)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }
@@ -74,7 +74,7 @@ private extension DetailPosterViewController {
                 case .success(let success):
                     self.list[2] = success.posters
                 case .failure(let failure):
-                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다. \(failure.localizedDescription)", duration: 2, position: .center)
+                    self.view.makeToast("포스터 정보를 불러오는데 실패했습니다. \(failure.rawValue)", duration: 2, position: .center)
                 }
                 waitGroup.leave()
             }

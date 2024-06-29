@@ -50,6 +50,7 @@
 		D1E587852C2BD31100F3E452 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587842C2BD31100F3E452 /* TMDBAPI.swift */; };
 		D1E587882C2BF1D100F3E452 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587872C2BF1D100F3E452 /* BaseTableViewCell.swift */; };
 		D1E5878A2C2BF1DA00F3E452 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587892C2BF1DA00F3E452 /* BaseCollectionViewCell.swift */; };
+		D1E5879B2C2FD3AA00F3E452 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5879A2C2FD3AA00F3E452 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		D1E587842C2BD31100F3E452 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 		D1E587872C2BF1D100F3E452 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D1E587892C2BF1DA00F3E452 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1E5879A2C2FD3AA00F3E452 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			children = (
 				D1E586E32C254CC700F3E452 /* NetworkManager.swift */,
 				D1E587842C2BD31100F3E452 /* TMDBAPI.swift */,
+				D1E5879A2C2FD3AA00F3E452 /* APIError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				D1815FDA2C16DAC8004BA146 /* Extension+UIView.swift in Sources */,
 				D1E5873D2C2971BF00F3E452 /* DetailPosterViewController.swift in Sources */,
 				D181600D2C184825004BA146 /* MovieSearch.swift in Sources */,
+				D1E5879B2C2FD3AA00F3E452 /* APIError.swift in Sources */,
 				D1815FB82C16D513004BA146 /* AppDelegate.swift in Sources */,
 				D1E587882C2BF1D100F3E452 /* BaseTableViewCell.swift in Sources */,
 				D1815FCF2C16D5F2004BA146 /* APIKey.swift in Sources */,
