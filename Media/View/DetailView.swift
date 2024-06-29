@@ -102,8 +102,8 @@ private extension DetailView {
 }
 
 extension DetailView {
-    func getMovieCredit(data: SearchResult) {
-        NetworkManager.shared.getMovieData(api: .movieCreidt(id: data.id), responseType: MovieCredit.self) { result in
+    func getMovieCredit(data: DetailData) {
+        NetworkManager.shared.getMovieData(api: .movieCreidt(id: data.identifier), responseType: MovieCredit.self) { result in
             switch result {
             case .success(let success):
                 self.list = success.cast

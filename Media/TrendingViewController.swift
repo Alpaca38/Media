@@ -38,7 +38,7 @@ extension TrendingViewController {
 
 extension TrendingViewController {
     @objc private func listButtonTapped() {
-        
+        self.view.makeToast("준비중입니다.", duration: 2, position: .center)
     }
     
     @objc private func searchButtonTapped() {
@@ -57,6 +57,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
         let data = trendingView.list[indexPath.row]
         let genreList = trendingView.genreList
         cell.configure(data: data, genreList: genreList)
+        cell.delegate = self
         
         return cell
     }
@@ -68,4 +69,14 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension TrendingViewController: TrendingTableViewCellDelegate {
+    func didDetailButtonTapped(_ cell: UITableViewCell) {
+        guard let indexPath = trendingView.tableView.indexPath(for: cell) else { return }
+        let data = trendingView.list[indexPath.row]
+        let vc = DetailViewController()
+        vc.data = data
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

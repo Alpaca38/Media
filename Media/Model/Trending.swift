@@ -21,13 +21,12 @@ struct Trending: Codable {
 }
 
 // MARK: - Result
-struct TrendingResult: Codable {
+struct TrendingResult: Codable, DetailData {
     let backdropPath: String
     let id: Int
     let originalTitle, overview, posterPath: String
     let mediaType: String
     let adult: Bool
-    let title: String
     let originalLanguage: String
     let genreIDS: [Int]
     let popularity: Double
@@ -35,11 +34,21 @@ struct TrendingResult: Codable {
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
-    
     var ratingString: String {
         return "평점 \(voteAverage)"
     }
-
+    var identifier: Int {
+        return id
+    }
+    var path: String? {
+        return posterPath
+    }
+    var title: String {
+        return originalTitle
+    }
+    var overView: String {
+        return overview
+    }
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
         case id
@@ -47,7 +56,7 @@ struct TrendingResult: Codable {
         case overview
         case posterPath = "poster_path"
         case mediaType = "media_type"
-        case adult, title
+        case adult
         case originalLanguage = "original_language"
         case genreIDS = "genre_ids"
         case popularity

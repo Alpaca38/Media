@@ -11,6 +11,7 @@ import Cosmos
 import Kingfisher
 
 class TrendingTableViewCell: BaseTableViewCell {
+    weak var delegate: TrendingTableViewCellDelegate?
     
     let dateLabel = UILabel()
     let categoryLabel = UILabel()
@@ -74,6 +75,7 @@ class TrendingTableViewCell: BaseTableViewCell {
         detailLabel.snp.makeConstraints {
             $0.top.equalTo(separatorView.snp.bottom).offset(16)
             $0.leading.equalTo(separatorView)
+            $0.trailing.equalTo(detailButton.snp.leading)
         }
         
         detailButton.snp.makeConstraints {
@@ -115,7 +117,13 @@ class TrendingTableViewCell: BaseTableViewCell {
         
         detailButton.setImage(UIImage(systemName: "chevron.forward"), for: .normal)
         detailButton.tintColor = .black
-        detailLabel.isUserInteractionEnabled = false
+        detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+    }
+}
+
+private extension TrendingTableViewCell {
+    @objc func detailButtonTapped() {
+        delegate?.didDetailButtonTapped(self)
     }
 }
 

@@ -11,7 +11,7 @@ import Kingfisher
 class DetailViewController: BaseViewController {
     
     let detailView = DetailView()
-    var data: SearchResult?
+    var data: DetailData?
     
     override func loadView() {
         super.loadView()
@@ -35,16 +35,16 @@ extension DetailViewController {
         detailView.castTableView.dataSource = self
         
         guard let data else { return }
-        if data.poster_path != nil {
-            let url = URL(string: "https://image.tmdb.org/t/p/original\(data.poster_path!)")
+        if data.path != nil {
+            let url = URL(string: "https://image.tmdb.org/t/p/original\(data.path!)")
             detailView.posterImageView.kf.setImage(with: url)
         } else {
             detailView.posterImageView.backgroundColor = .darkGray
         }
         
-        detailView.titleLabel.text = data.original_title
+        detailView.titleLabel.text = data.title
         
-        detailView.overviewLabel.text = data.overview
+        detailView.overviewLabel.text = data.overView
     }
 
 }

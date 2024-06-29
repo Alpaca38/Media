@@ -19,9 +19,25 @@ struct SearchMovie: Codable {
     }
 }
 
-struct SearchResult: Codable {
+struct SearchResult: Codable, DetailData {
     let poster_path: String?
     let id: Int
     let original_title: String
     let overview: String
+    
+    var identifier: Int {
+        return id
+    }
+    
+    var path: String? {
+        return poster_path
+    }
+    
+    var title: String {
+        return original_title
+    }
+    
+    var overView: String {
+        return overview
+    }
 }
