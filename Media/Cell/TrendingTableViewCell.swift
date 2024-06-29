@@ -10,7 +10,7 @@ import SnapKit
 import Cosmos
 import Kingfisher
 
-class HomeTableViewCell: BaseTableViewCell {
+class TrendingTableViewCell: BaseTableViewCell {
     
     let dateLabel = UILabel()
     let categoryLabel = UILabel()
@@ -119,7 +119,7 @@ class HomeTableViewCell: BaseTableViewCell {
     }
 }
 
-extension HomeTableViewCell {
+extension TrendingTableViewCell {
     func configure(data: TrendingResult, genreList: [Genre]) {
         dateLabel.text = data.releaseDate
         

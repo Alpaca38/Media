@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D1815FB82C16D513004BA146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FB72C16D513004BA146 /* AppDelegate.swift */; };
 		D1815FBA2C16D513004BA146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FB92C16D513004BA146 /* SceneDelegate.swift */; };
-		D1815FBC2C16D513004BA146 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FBB2C16D513004BA146 /* HomeViewController.swift */; };
+		D1815FBC2C16D513004BA146 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FBB2C16D513004BA146 /* TrendingViewController.swift */; };
 		D1815FC12C16D515004BA146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1815FC02C16D515004BA146 /* Assets.xcassets */; };
 		D1815FC42C16D515004BA146 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D1815FC32C16D515004BA146 /* Base */; };
 		D1815FCC2C16D54F004BA146 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1815FCB2C16D54F004BA146 /* .gitignore */; };
@@ -20,7 +20,7 @@
 		D1815FDD2C16DB0D004BA146 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D1815FDC2C16DB0D004BA146 /* SnapKit */; };
 		D1815FE02C16DB1D004BA146 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D1815FDF2C16DB1D004BA146 /* Alamofire */; };
 		D1815FE32C16DB26004BA146 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D1815FE22C16DB26004BA146 /* Kingfisher */; };
-		D1815FE62C16DBB1004BA146 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */; };
+		D1815FE62C16DBB1004BA146 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FE52C16DBB1004BA146 /* TrendingTableViewCell.swift */; };
 		D1815FE92C16E0A4004BA146 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = D1815FE82C16E0A4004BA146 /* Cosmos */; };
 		D1815FEB2C16E286004BA146 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FEA2C16E286004BA146 /* Extension+UIFont.swift */; };
 		D1815FED2C16E2FC004BA146 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1815FEC2C16E2FC004BA146 /* Extension+UIColor.swift */; };
@@ -36,7 +36,7 @@
 		D18160152C19461B004BA146 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160142C19461B004BA146 /* BaseViewController.swift */; };
 		D1E586E42C254CC700F3E452 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586E32C254CC700F3E452 /* NetworkManager.swift */; };
 		D1E586E72C254F2800F3E452 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D1E586E62C254F2800F3E452 /* Toast */; };
-		D1E586EA2C26A0ED00F3E452 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586E92C26A0ED00F3E452 /* HomeView.swift */; };
+		D1E586EA2C26A0ED00F3E452 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586E92C26A0ED00F3E452 /* TrendingView.swift */; };
 		D1E586EC2C26B4B200F3E452 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586EB2C26B4B200F3E452 /* SearchView.swift */; };
 		D1E586EE2C26B76C00F3E452 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586ED2C26B76C00F3E452 /* DetailView.swift */; };
 		D1E587372C29316900F3E452 /* SimilarMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587362C29316900F3E452 /* SimilarMovie.swift */; };
@@ -57,7 +57,7 @@
 		D1815FB42C16D513004BA146 /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1815FB72C16D513004BA146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1815FB92C16D513004BA146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D1815FBB2C16D513004BA146 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D1815FBB2C16D513004BA146 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		D1815FC02C16D515004BA146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1815FC32C16D515004BA146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1815FC52C16D515004BA146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		D1815FD22C16D693004BA146 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		D1815FD52C16D735004BA146 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		D1815FD92C16DAC8004BA146 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
-		D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		D1815FE52C16DBB1004BA146 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		D1815FEA2C16E286004BA146 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		D1815FEC2C16E2FC004BA146 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		D1815FF12C16F11B004BA146 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		D181600C2C184825004BA146 /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
 		D18160142C19461B004BA146 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D1E586E32C254CC700F3E452 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		D1E586E92C26A0ED00F3E452 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D1E586E92C26A0ED00F3E452 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		D1E586EB2C26B4B200F3E452 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D1E586ED2C26B76C00F3E452 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D1E587362C29316900F3E452 /* SimilarMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMovie.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				D1815FCD2C16D5E5004BA146 /* API */,
 				D1815FB72C16D513004BA146 /* AppDelegate.swift */,
 				D1815FB92C16D513004BA146 /* SceneDelegate.swift */,
-				D1815FBB2C16D513004BA146 /* HomeViewController.swift */,
+				D1815FBB2C16D513004BA146 /* TrendingViewController.swift */,
 				D1E5873C2C2971BF00F3E452 /* DetailPosterViewController.swift */,
 				D18160082C183ED6004BA146 /* SearchViewController.swift */,
 				D1815FF52C170364004BA146 /* DetailViewController.swift */,
@@ -200,7 +200,7 @@
 		D1815FE42C16DB94004BA146 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D1815FE52C16DBB1004BA146 /* HomeTableViewCell.swift */,
+				D1815FE52C16DBB1004BA146 /* TrendingTableViewCell.swift */,
 				D1815FFB2C1739B8004BA146 /* CastTableViewCell.swift */,
 				D181600A2C18416D004BA146 /* PosterCollectionViewCell.swift */,
 				D1E5876A2C2AACA100F3E452 /* PosterTableViewCell.swift */,
@@ -229,7 +229,7 @@
 		D1E586E82C26A0E200F3E452 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D1E586E92C26A0ED00F3E452 /* HomeView.swift */,
+				D1E586E92C26A0ED00F3E452 /* TrendingView.swift */,
 				D1E586EB2C26B4B200F3E452 /* SearchView.swift */,
 				D1E586ED2C26B76C00F3E452 /* DetailView.swift */,
 				D1E5873E2C2971EE00F3E452 /* DetailPosterView.swift */,
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1815FEB2C16E286004BA146 /* Extension+UIFont.swift in Sources */,
-				D1815FBC2C16D513004BA146 /* HomeViewController.swift in Sources */,
+				D1815FBC2C16D513004BA146 /* TrendingViewController.swift in Sources */,
 				D1E5876F2C2ACA1D00F3E452 /* PosterData.swift in Sources */,
 				D1815FD62C16D735004BA146 /* ReuseIdentifier.swift in Sources */,
 				D1815FFC2C1739B8004BA146 /* CastTableViewCell.swift in Sources */,
@@ -358,7 +358,7 @@
 				D1815FF82C172D34004BA146 /* Extension+UILabel.swift in Sources */,
 				D1815FD32C16D693004BA146 /* Extension+UIViewController.swift in Sources */,
 				D1E5876B2C2AACA100F3E452 /* PosterTableViewCell.swift in Sources */,
-				D1815FE62C16DBB1004BA146 /* HomeTableViewCell.swift in Sources */,
+				D1815FE62C16DBB1004BA146 /* TrendingTableViewCell.swift in Sources */,
 				D1815FF22C16F11B004BA146 /* Trending.swift in Sources */,
 				D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */,
 				D1815FBA2C16D513004BA146 /* SceneDelegate.swift in Sources */,
@@ -367,7 +367,7 @@
 				D1815FF42C16F9EE004BA146 /* MovieGenre.swift in Sources */,
 				D1815FED2C16E2FC004BA146 /* Extension+UIColor.swift in Sources */,
 				D181600B2C18416D004BA146 /* PosterCollectionViewCell.swift in Sources */,
-				D1E586EA2C26A0ED00F3E452 /* HomeView.swift in Sources */,
+				D1E586EA2C26A0ED00F3E452 /* TrendingView.swift in Sources */,
 				D1815FF62C170364004BA146 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

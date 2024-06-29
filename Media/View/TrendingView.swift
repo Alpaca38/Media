@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class HomeView: UIView {
+class TrendingView: UIView {
     let tableView = UITableView()
     var list: [TrendingResult] = [] {
         didSet {
@@ -33,7 +33,7 @@ class HomeView: UIView {
         tableView.snp.makeConstraints {
             $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: TrendingTableViewCell.identifier)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .backgroundColor
     }
@@ -43,7 +43,7 @@ class HomeView: UIView {
     }
 }
 
-private extension HomeView {
+private extension TrendingView {
     func getMovieData() {
         NetworkManager.shared.getMovieData(api: .trendingMovie, responseType: Trending.self) { result in
             switch result {

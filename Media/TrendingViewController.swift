@@ -7,13 +7,13 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class TrendingViewController: BaseViewController {
     
-    let homeView = HomeView()
+    let trendingView = TrendingView()
 
     override func loadView() {
         super.loadView()
-        view = homeView
+        view = trendingView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController {
 
 }
 
-extension HomeViewController {
+extension TrendingViewController {
     func configureUI() {
         setNavigationBar(tintColor: .black, title: nil)
         let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
@@ -31,12 +31,12 @@ extension HomeViewController {
         navigationItem.rightBarButtonItem = searchButton
         navigationItem.backButtonDisplayMode = .minimal
         
-        homeView.tableView.delegate = self
-        homeView.tableView.dataSource = self
+        trendingView.tableView.delegate = self
+        trendingView.tableView.dataSource = self
     }
 }
 
-extension HomeViewController {
+extension TrendingViewController {
     @objc private func listButtonTapped() {
         
     }
@@ -47,22 +47,22 @@ extension HomeViewController {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeView.list.count
+        return trendingView.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as! HomeTableViewCell
-        let data = homeView.list[indexPath.row]
-        let genreList = homeView.genreList
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrendingTableViewCell.identifier, for: indexPath) as! TrendingTableViewCell
+        let data = trendingView.list[indexPath.row]
+        let genreList = trendingView.genreList
         cell.configure(data: data, genreList: genreList)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = homeView.list[indexPath.row]
+        let data = trendingView.list[indexPath.row]
         let vc = DetailPosterViewController()
         vc.data = data
         navigationController?.pushViewController(vc, animated: true)
