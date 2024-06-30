@@ -35,12 +35,13 @@ class PosterTableViewCell: BaseTableViewCell {
         }
     }
     
-    func configure(category: DetailPosterCategory.RawValue) {
+    func configure(category: String) {
         categoryLabel.text = category
     }
     
     private func layout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 120, height: 160)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10

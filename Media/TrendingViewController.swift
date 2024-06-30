@@ -37,7 +37,8 @@ extension TrendingViewController {
 
 extension TrendingViewController {
     @objc private func listButtonTapped() {
-        self.view.makeToast("준비중입니다.", duration: 2, position: .center)
+        let vc = MovieListViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func searchButtonTapped() {

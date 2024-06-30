@@ -11,6 +11,7 @@ class BaseTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .backgroundColor
+        selectionStyle = .none
         configureHierachy()
         configureLayout()
         configureUI()
