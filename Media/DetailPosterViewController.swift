@@ -25,7 +25,6 @@ class DetailPosterViewController: BaseViewController {
     ]
     
     override func loadView() {
-        super.loadView()
         detailPosterView.tableView.delegate = self
         detailPosterView.tableView.dataSource = self
         view = detailPosterView

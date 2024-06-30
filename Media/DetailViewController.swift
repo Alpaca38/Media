@@ -14,7 +14,6 @@ class DetailViewController: BaseViewController {
     var data: DetailData?
     
     override func loadView() {
-        super.loadView()
         view = detailView
     }
 

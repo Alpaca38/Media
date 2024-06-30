@@ -12,7 +12,6 @@ class TrendingViewController: BaseViewController {
     let trendingView = TrendingView()
 
     override func loadView() {
-        super.loadView()
         view = trendingView
     }
     override func viewDidLoad() {

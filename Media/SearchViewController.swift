@@ -12,7 +12,6 @@ class SearchViewController: BaseViewController {
     let searchView = SearchView()
     
     override func loadView() {
-        super.loadView()
         view = searchView
     }
     
