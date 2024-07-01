@@ -8,15 +8,15 @@
 import UIKit
 import Toast
 
-enum MovieListCategory: String, CaseIterable {
+private enum MovieListCategory: String, CaseIterable {
     case nowplaying = "Now Playing"
     case popular = "Popular"
     case toprated = "Top Rated"
     case upcoming = "Upcoming"
 }
 
-class MovieListViewController: BaseViewController {
-    let movieListView = DetailPosterView()
+final class MovieListViewController: BaseViewController {
+    private let movieListView = DetailPosterView()
     var list: [[PosterData]] = [[], [], [], []]
     
     override func loadView() {

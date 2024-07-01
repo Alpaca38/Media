@@ -8,9 +8,8 @@
 import UIKit
 import Kingfisher
 
-class DetailViewController: BaseViewController {
-    
-    let detailView = DetailView()
+final class DetailViewController: BaseViewController {
+    private let detailView = DetailView()
     var data: DetailData?
     
     override func loadView() {
@@ -26,7 +25,7 @@ class DetailViewController: BaseViewController {
 
 }
 
-extension DetailViewController {
+private extension DetailViewController {
     func configureUI() {
         setNavigationBar(tintColor: .black, title: nil)
         

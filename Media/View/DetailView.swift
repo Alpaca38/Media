@@ -9,12 +9,12 @@ import UIKit
 import SnapKit
 import Toast
 
-class DetailView: UIView {
+final class DetailView: UIView {
     let posterImageView = UIImageView()
-    let infoView = UIView()
+    private let infoView = UIView()
     let titleLabel = UILabel()
     let overviewLabel = UILabel()
-    let castLabel = UILabel()
+    private let castLabel = UILabel()
     let castTableView = UITableView()
 
     var list: [Cast] = [] {

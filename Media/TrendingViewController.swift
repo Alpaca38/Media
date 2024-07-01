@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TrendingViewController: BaseViewController {
+final class TrendingViewController: BaseViewController {
     
-    let trendingView = TrendingView()
+    private let trendingView = TrendingView()
 
     override func loadView() {
         view = trendingView
@@ -21,7 +21,7 @@ class TrendingViewController: BaseViewController {
 
 }
 
-extension TrendingViewController {
+private extension TrendingViewController {
     func configureUI() {
         setNavigationBar(tintColor: .black, title: nil)
         let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
@@ -35,13 +35,13 @@ extension TrendingViewController {
     }
 }
 
-extension TrendingViewController {
-    @objc private func listButtonTapped() {
+private extension TrendingViewController {
+    @objc func listButtonTapped() {
         let vc = MovieListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc private func searchButtonTapped() {
+    @objc func searchButtonTapped() {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

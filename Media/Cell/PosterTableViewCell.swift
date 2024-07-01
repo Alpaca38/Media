@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class PosterTableViewCell: BaseTableViewCell {
-    lazy var categoryLabel = {
+final class PosterTableViewCell: BaseTableViewCell {
+    private lazy var categoryLabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 20)
         view.text = "비슷한 영화" // 더미

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class DetailPosterView: BaseView {
+final class DetailPosterView: BaseView {
     lazy var titleLabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 30)

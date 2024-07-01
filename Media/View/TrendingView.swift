@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class TrendingView: UIView {
+final class TrendingView: UIView {
     let tableView = UITableView()
     var list: [TrendingResult] = [] {
         didSet {

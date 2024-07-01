@@ -9,14 +9,14 @@ import UIKit
 import SnapKit
 import Toast
 
-enum DetailPosterCategory: String, CaseIterable {
+private enum DetailPosterCategory: String, CaseIterable {
     case similar = "비슷한 영화"
     case recommend = "추천 영화"
     case poster = "포스터"
 }
 
-class DetailPosterViewController: BaseViewController {
-    let detailPosterView = DetailPosterView()
+final class DetailPosterViewController: BaseViewController {
+    private let detailPosterView = DetailPosterView()
     var data: TrendingResult?
     var list: [[PosterData]] = [
         [SimilarMovieResult(posterPath: "")],

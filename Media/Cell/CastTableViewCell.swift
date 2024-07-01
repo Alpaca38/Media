@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class CastTableViewCell: BaseTableViewCell {
+final class CastTableViewCell: BaseTableViewCell {
     
-    let actorImageView = UIImageView()
-    let actorNameLabel = UILabel()
-    let castNameLabel = UILabel()
+    private let actorImageView = UIImageView()
+    private let actorNameLabel = UILabel()
+    private let castNameLabel = UILabel()
     
-    lazy var nameStackView = {
+    private lazy var nameStackView = {
         let view = UIStackView(arrangedSubviews: [actorNameLabel, castNameLabel])
         view.axis = .vertical
         view.distribution = .equalSpacing

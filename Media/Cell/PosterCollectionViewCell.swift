@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class PosterCollectionViewCell: BaseCollectionViewCell {
+final class PosterCollectionViewCell: BaseCollectionViewCell {
     
-    let posterimageView = UIImageView()
+    private let posterimageView = UIImageView()
     
     override func configureHierachy() {
         contentView.addSubview(posterimageView)

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
+final class SearchViewController: BaseViewController {
     
-    let searchView = SearchView()
+    private let searchView = SearchView()
     
     override func loadView() {
         view = searchView
@@ -22,8 +22,7 @@ class SearchViewController: BaseViewController {
     }
 }
 
-extension SearchViewController {
-    
+private extension SearchViewController {
     func configureUI() {
         searchView.collectionView.delegate = self
         searchView.collectionView.dataSource = self

@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Toast
 
-class SearchView: UIView {
+final class SearchView: UIView {
     let searchBar = UISearchBar()
-    let categoryLabel = UILabel()
+    private let categoryLabel = UILabel()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
     var list = SearchMovie(page: 1, results: [], totalPages: 0, totalResults: 0) {

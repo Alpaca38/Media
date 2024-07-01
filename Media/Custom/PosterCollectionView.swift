@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PosterCollectionView: UICollectionView {
+final class PosterCollectionView: UICollectionView {
     init(layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = .backgroundColor

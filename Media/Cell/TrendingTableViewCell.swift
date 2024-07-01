@@ -10,19 +10,19 @@ import SnapKit
 import Cosmos
 import Kingfisher
 
-class TrendingTableViewCell: BaseTableViewCell {
+final class TrendingTableViewCell: BaseTableViewCell {
     weak var delegate: TrendingTableViewCellDelegate?
     
-    let dateLabel = UILabel()
-    let categoryLabel = UILabel()
-    let posterView = UIView()
-    let posterImageView = UIImageView()
-    let posterInfoView = UIView()
-    let titleLabel = UILabel()
-    let ratingView = CosmosView()
-    let separatorView = UIView()
-    let detailLabel = UILabel()
-    let detailButton = UIButton()
+    private let dateLabel = UILabel()
+    private let categoryLabel = UILabel()
+    private let posterView = UIView()
+    private let posterImageView = UIImageView()
+    private let posterInfoView = UIView()
+    private let titleLabel = UILabel()
+    private let ratingView = CosmosView()
+    private let separatorView = UIView()
+    private let detailLabel = UILabel()
+    private let detailButton = UIButton()
     
     override func configureHierachy() {
         contentView.addSubviews([dateLabel, categoryLabel, posterView])
