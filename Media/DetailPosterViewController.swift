@@ -16,7 +16,7 @@ private enum DetailPosterCategory: String, CaseIterable {
 }
 
 final class DetailPosterViewController: BaseViewController {
-    private let detailPosterView = DetailPosterView()
+    private let detailPosterView = DetailPosterView(includeWebView: true)
     var data: TrendingResult?
     var list: [[PosterData]] = [
         [SimilarMovieResult(posterPath: "")],
@@ -33,8 +33,9 @@ final class DetailPosterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let data else { return }
-        detailPosterView.titleLabel.text = data.title
+        detailPosterView.configureView(data: data)
         getPosters()
+        getVideos()
     }
 }
 
@@ -80,6 +81,19 @@ private extension DetailPosterViewController {
         }
         waitGroup.notify(queue: .main) {
             self.detailPosterView.tableView.reloadData()
+        }
+    }
+    
+    func getVideos() {
+        guard let data else { return }
+        NetworkManager.shared.getMovieData(api: .movieVideos(movieID: data.id), responseType: MovieVideos.self) { result in
+            switch result {
+            case .success(let success):
+                self.detailPosterView.data = success
+                self.detailPosterView.configureWebView()
+            case .failure(let failure):
+                self.view.makeToast("비디오 정보를 불러오는데 실패했습니다. \(failure.rawValue)", duration: 2, position: .center)
+            }
         }
     }
 }

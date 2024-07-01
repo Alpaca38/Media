@@ -58,6 +58,7 @@
 		D1E587B42C31605600F3E452 /* NowPlayingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587B32C31605600F3E452 /* NowPlayingMovie.swift */; };
 		D1E587B62C3163DD00F3E452 /* PopularMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587B52C3163DD00F3E452 /* PopularMovie.swift */; };
 		D1E587B82C3164A500F3E452 /* TopRatedMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587B72C3164A500F3E452 /* TopRatedMovie.swift */; };
+		D1E587E52C32CAB900F3E452 /* MovieVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587E42C32CAB900F3E452 /* MovieVideos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		D1E587B32C31605600F3E452 /* NowPlayingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMovie.swift; sourceTree = "<group>"; };
 		D1E587B52C3163DD00F3E452 /* PopularMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovie.swift; sourceTree = "<group>"; };
 		D1E587B72C3164A500F3E452 /* TopRatedMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMovie.swift; sourceTree = "<group>"; };
+		D1E587E42C32CAB900F3E452 /* MovieVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				D1E587B32C31605600F3E452 /* NowPlayingMovie.swift */,
 				D1E587B52C3163DD00F3E452 /* PopularMovie.swift */,
 				D1E587B72C3164A500F3E452 /* TopRatedMovie.swift */,
+				D1E587E42C32CAB900F3E452 /* MovieVideos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				D18160092C183ED6004BA146 /* SearchViewController.swift in Sources */,
 				D1E587B42C31605600F3E452 /* NowPlayingMovie.swift in Sources */,
 				D1815FBA2C16D513004BA146 /* SceneDelegate.swift in Sources */,
+				D1E587E52C32CAB900F3E452 /* MovieVideos.swift in Sources */,
 				D1E587B82C3164A500F3E452 /* TopRatedMovie.swift in Sources */,
 				D1E5879F2C2FE1F000F3E452 /* DetailData.swift in Sources */,
 				D1E5878A2C2BF1DA00F3E452 /* BaseCollectionViewCell.swift in Sources */,

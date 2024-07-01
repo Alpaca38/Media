@@ -16,7 +16,7 @@ private enum MovieListCategory: String, CaseIterable {
 }
 
 final class MovieListViewController: BaseViewController {
-    private let movieListView = DetailPosterView()
+    private let movieListView = DetailPosterView(includeWebView: false)
     var list: [[PosterData]] = [[], [], [], []]
     
     override func loadView() {
@@ -28,7 +28,7 @@ final class MovieListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        movieListView.titleLabel.text = "영화 둘러보기"
+        movieListView.configureTitleLabel()
         getMovieList()
     }
 }

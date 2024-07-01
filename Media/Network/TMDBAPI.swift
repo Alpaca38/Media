@@ -20,6 +20,7 @@ enum TMDBAPI {
     case nowPlayingMovie
     case popularMovie
     case topRatedMovie
+    case movieVideos(movieID: Int)
     
     var baseURL: String {
         return "https://api.themoviedb.org/3/"
@@ -49,12 +50,14 @@ enum TMDBAPI {
             return URL(string: baseURL + "movie/popular")!
         case .topRatedMovie:
             return URL(string: baseURL + "movie/top_rated")!
+        case .movieVideos(let movieID):
+            return URL(string: baseURL + "movie/\(movieID)/videos")!
         }
     }
     
     var parameter: Parameters {
         switch self {
-        case .trendingMovie, .movieGenre, .movieCreidt, .similarMovie, .recommendMovie, .upcomingMovie, .nowPlayingMovie, .popularMovie, .topRatedMovie:
+        case .trendingMovie, .movieGenre, .movieCreidt, .similarMovie, .recommendMovie, .upcomingMovie, .nowPlayingMovie, .popularMovie, .topRatedMovie, .movieVideos:
             return ["language": "ko-KR"]
         case .searchMovie(let query, let page):
             return ["query": query, "page": page, "language": "ko-KR"]
